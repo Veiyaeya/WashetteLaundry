@@ -1,0 +1,405 @@
+/* ========== BODY & BACKGROUND ========== */
+body {
+  font-family: "Arimo", sans-serif;
+  background-image: linear-gradient(
+    90.5deg,
+    rgba(112, 181, 176, 1) 1.9%,
+    rgba(220, 244, 241, 1) 87.7%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* ========== HEADER ========== */
+.header {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: 3px solid rgba(191, 230, 227, 0.45) !important;
+  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.1);
+  position: sticky;
+  top: 10px;
+  z-index: 1000;
+  padding: 0.8rem 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 18px !important;
+}
+
+/* Style for Home text */
+.header span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #395c58;
+}
+
+/* ========== CARD STYLES ========== */
+.card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(191, 230, 227, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  border-radius: 18px;
+  transition: box-shadow 0.18s, background 0.18s, transform 0.18s;
+  color: #395c58;
+  position: relative;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.card:hover {
+  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.18);
+  background: rgba(255, 255, 255, 0.32);
+  transform: scale(1.009);
+}
+.card.no-hover-effect:hover {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  background: rgba(255, 255, 255, 0.22);
+  transform: none;
+}
+
+/* ========== CARD CONTENT ========== */
+.card-title {
+  font-weight: 600;
+  color: #395c58;
+}
+.transaction-history-card .card-title,
+.latest-transaction-card .card-title {
+  font-size: 0.80rem; /* Same font size for both titles */
+}
+.card-text {
+  color: #395c58;
+}
+.card-body {
+  padding: 1rem 1.2rem;
+}
+.card-icon {
+  font-size: 2.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #395c58;
+  pointer-events: none;
+  transition: right 0.3s;
+}
+.card:hover .card-arrow {
+  right: 15px;
+}
+.card-content {
+  padding-right: 2rem;
+}
+
+/* ========== PROFILE CARD ========== */
+#profileCard {
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgba(217, 242, 239, 0.5);
+  box-shadow: 0 4px 12px rgba(31, 38, 135, 0.1);
+  transition: transform 0.3s ease;
+  padding: 0.5rem;
+}
+#profileCard:hover {
+  transform: scale(1.02);
+}
+#profileIcon {
+  border: 2px solid #baebe6;
+  transition: border-color 0.2s ease;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#profileCard:hover #profileIcon {
+  border-color: #395c58;
+}
+.profile-menu {
+  min-width: 150px;
+}
+.profile-menu a, .profile-menu button {
+  transition: background 0.2s;
+}
+.profile-menu a:hover, .profile-menu button:hover {
+  background: rgba(191, 230, 227, 0.5);
+}
+
+/* ========== SERVICE CARDS ========== */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.1s ease;
+  text-align: center;
+}
+.service-card:hover {
+  transform: scale(1.03);
+}
+#servicesModal .service-card {
+  min-height: 150px;
+}
+#servicesModal .service-card .fw-bold {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #395c58;
+}
+#servicesModal .service-card > div:not(.fw-bold) {
+  font-size: 0.9rem;
+  color: #466c69;
+}
+
+/* ========== FILTER BUTTON ========== */
+.filter-btn {
+  background: #395c58;
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  flex-shrink: 0; /* Prevent filter button from shrinking */
+}
+.filter-btn:hover, .filter-btn:focus {
+  background: #2c4744;
+  box-shadow: 0 2px 12px rgba(57, 92, 88, 0.1);
+}
+
+/* ========== SEARCH INPUT ========== */
+.search {
+  max-width: 300px; /* Even longer search bar */
+  width: 100%;
+  padding: 0.3rem 0.8rem;
+  border: 2px solid rgba(191, 230, 227, 0.7);
+  border-radius: 15px;
+  background: rgba(217, 242, 239, 0.5);
+  color: #395c58;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search:focus {
+  border-color: #395c58;
+}
+.search::placeholder {
+  color: #466c69;
+  opacity: 0.7;
+}
+
+/* ========== TRANSACTION HISTORY CONTROLS ========== */
+.transaction-history-controls {
+  min-width: 0;
+  flex-shrink: 1; /* Allow container to shrink if needed */
+}
+
+/* ========== MODAL STYLES ========== */
+.modal-content {
+  background-color: rgba(217, 242, 239, 0.9);
+  border-radius: 20px;
+  border: 3px solid rgba(191, 230, 227, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
+  backdrop-filter: blur(4px);
+}
+.modal-header, .modal-footer {
+  border: none;
+  padding: 1rem;
+}
+.modal-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #395c58;
+}
+#applyFilterBtn.btn, #orderListApplyFilterBtn.btn {
+  border-radius: 15px;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.2rem;
+}
+.modal-dialog {
+  max-width: min(90%, 800px);
+  margin: 1.75rem auto;
+}
+.modal-lg {
+  max-width: min(90%, 800px);
+}
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* ========== CUSTOM CHECKBOX ========== */
+.form-check {
+  padding-left: 2em;
+  margin-bottom: 0.5em;
+}
+.form-check .custom-checkmark {
+  position: absolute;
+  left: 0.3em;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1em;
+  width: 1em;
+  background-color: #d9f2ef;
+  border: 2px solid #395c58;
+  border-radius: 0.2em;
+}
+.form-check-input:checked ~ .custom-checkmark {
+  background-color: #395c58;
+}
+.form-check .custom-checkmark:after {
+  content: '';
+  position: absolute;
+  left: 0.3em;
+  top: 0.1em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #fff;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+/* ========== TABLE STYLES ========== */
+.transaction-table {
+  width: 100%;
+  color: #395c58;
+  font-size: 1rem;
+}
+.transaction-table th {
+  font-weight: 600;
+  border-bottom: 2px solid #a7c7e7;
+}
+.transaction-table th, .transaction-table td {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.95rem;
+}
+.transaction-table tbody tr {
+  background-color: rgba(217, 242, 239, 0.5);
+}
+.transaction-table tbody tr:hover {
+  transform: scale(1.02);
+}
+
+/* ========== BADGE STYLES ========== */
+.glass-badge {
+  background: rgba(189, 231, 227, 0.32);
+  color: #2e7d6b;
+  border: 1px solid rgba(46, 125, 107, 0.13);
+  border-radius: 8px;
+  padding: 0.2em 0.6em;
+  font-size: 0.75em;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* ========== FOOTER ========== */
+.footer-washette {
+  color: rgba(40, 60, 60, 1);
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ========== MOBILE RESPONSIVENESS ========== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .header {
+    padding: 0.3rem 0.5rem;
+    border-radius: 12px;
+  }
+  .header span {
+    font-size: 1rem;
+  }
+  #profileCard {
+    padding: 0.5rem;
+  }
+  #profileName {
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+  .profile-picture {
+    width: 30px;
+    height: 30px;
+  }
+  #profileIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .profile-menu {
+    min-width: 120px;
+    font-size: 0.85rem;
+  }
+  .card {
+    border-radius: 12px;
+  }
+  .card-body {
+    padding: 0.8rem;
+  }
+  .card-icon {
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+  }
+  .card-arrow {
+    right: 15px;
+    font-size: 1.2rem;
+  }
+  .card-content {
+    padding-right: 1.5rem;
+  }
+  .transaction-table th, .transaction-table td {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .glass-badge {
+    font-size: 0.7em;
+    min-width: 60px;
+  }
+  .filter-btn {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.8rem;
+  }
+  .search {
+    max-width: 250px; /* Longer search bar on mobile */
+    font-size: 0.85rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .transaction-history-card .card-title,
+  .latest-transaction-card .card-title {
+    font-size: 0.85rem; /* Same font size for both titles on mobile */
+  }
+  .modal-content {
+    border-radius: 15px;
+  }
+  .modal-title {
+    font-size: 1rem;
+  }
+  #servicesModal .service-card {
+    min-height: 120px;
+  }
+  #servicesModal .service-card .fw-bold {
+    font-size: 0.95rem;
+  }
+  #servicesModal .service-card > div:not(.fw-bold) {
+    font-size: 0.85rem;
+  }
+  .modal-dialog {
+    max-width: 95%;
+  }
+  .modal-lg {
+    max-width: 95%;
+  }
+}
